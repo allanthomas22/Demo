@@ -7,7 +7,6 @@ export default function App() {
     <div className="w-full h-full ">
       <Navbar />
       <Home />
-      hi
     </div>
   );
 }
