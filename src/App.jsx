@@ -9,10 +9,8 @@ export default function App() {
     <Router>
       <div className="w-full h-full">
         <Navbar />
-
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route path="/bid/:bidNumber" element={<BidPage />} />
         </Routes>
       </div>
