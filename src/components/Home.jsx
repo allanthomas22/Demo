@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const tenders = [
@@ -11,6 +12,12 @@ export default function Home() {
     { title: "Supply of RFID Tags", bidNumber: "PRO044" },
   ];
 
+  const navigate = useNavigate();
+
+  const handleViewDetails = (bidNumber) => {
+    navigate(`/bid/${bidNumber}`);
+  };
+
   return (
     <div className="w-full h-full overflow-y-auto">
       <div className="w-full h-[200px]  flex items-center justify-center">
@@ -21,7 +28,7 @@ export default function Home() {
           <p className="text-[#4c64cf] w-[95%] text-start font-thin text-2xl py-5">
             Inviting Tenders for:
           </p>
-          <div className="grid grid-cols-3 gap-10 ">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 ">
             {tenders.map((tender) => (
               <div className="bg-[#c7daff] w-[500px] h-[200px] rounded-2xl ">
                 <div className=" flex flex-col gap-2 px-14 py-7">
@@ -34,7 +41,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center justify-center cursor-pointer">
                   <button
-                    onClick={() => {}}
+                    onClick={() => handleViewDetails(tender.bidNumber)}
                     className="w-[190px] h-[45px] rounded-xl bg-[#4c64cf] "
                   >
                     <p className="text-white font-semibold text-base">
