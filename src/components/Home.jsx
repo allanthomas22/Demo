@@ -33,7 +33,10 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center justify-center cursor-pointer">
-                  <button className="w-[190px] h-[45px] rounded-xl bg-[#4c64cf] ">
+                  <button
+                    onClick={() => {}}
+                    className="w-[190px] h-[45px] rounded-xl bg-[#4c64cf] "
+                  >
                     <p className="text-white font-semibold text-base">
                       View Bid Details
                     </p>
