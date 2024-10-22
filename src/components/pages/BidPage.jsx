@@ -124,7 +124,30 @@ const BidDetails = () => {
 };
 
 const EligibilityCriteria = () => {
-  return <>EligibilityCriteria</>;
+  return (
+    <>
+      <div className="w-full flex justify-center">
+        <table className="w-[80%] mt-20 border-collapse">
+          <thead>
+            <tr className="bg-[#4c64cf] text-white">
+              <th className="px-4 py-3 border-r-2 border-white">Criteria</th>
+              <th className=" py-3 border-r-2 border-white">
+                Qualification Values
+              </th>
+              <th className="px-4 py-3 border-r-2 border-white">Comments</th>
+            </tr>
+          </thead>
+          <tbody className="bg-[#dee9ff] ">
+            <tr className="border-r-2 border-white">
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
 };
 
 const ItemstoProcure = () => {
@@ -133,10 +156,30 @@ const ItemstoProcure = () => {
 
   return (
     <>
+      <div className="w-full flex justify-center">
+        <table className="w-[80%] mt-20 border-collapse">
+          <thead>
+            <tr className="bg-[#4c64cf] text-white">
+              <th className="px-4 py-3 border-r-2 border-white">Criteria</th>
+              <th className=" py-3 border-r-2 border-white">
+                Qualification Values
+              </th>
+              <th className="px-4 py-3 border-r-2 border-white">Comments</th>
+            </tr>
+          </thead>
+          <tbody className="bg-[#dee9ff] ">
+            <tr className="border-r-2 border-white">
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+              <td className="border px-4 py-10 border-r-2 border-white"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div className="w-full h-full flex justify-center items-center">
         <button
           onClick={() => setShowModal(!showModal)}
-          className="w-[190px] h-[45px] rounded-xl bg-[#4c64cf]"
+          className="w-[190px] mt-[500px] h-[45px] rounded-xl bg-[#4c64cf]"
         >
           <p className="text-white font-semibold text-2xl">Bid Now</p>
         </button>
