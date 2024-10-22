@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom"; // Import useParams to get bidNumber from the URL
 import Footer from "../Footer";
+import { IoCloseOutline } from "react-icons/io5";
 
 const BidDetails = () => {
   const bidNumber = useParams().bidNumber;
@@ -127,7 +128,127 @@ const EligibilityCriteria = () => {
 };
 
 const ItemstoProcure = () => {
-  return <>ItemstoProcure</>;
+  const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+
+  return (
+    <>
+      <div className="w-full h-full flex justify-center items-center">
+        <button
+          onClick={() => setShowModal(!showModal)}
+          className="w-[190px] h-[45px] rounded-xl bg-[#4c64cf]"
+        >
+          <p className="text-white font-semibold text-2xl">Bid Now</p>
+        </button>
+      </div>
+
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-blue-600/30">
+          <div className="w-[530px] h-[900px] mb-4 flex items-center justify-center rounded-2xl bg-white shadow-lg">
+            <div className="w-full h-full p-4">
+              <div className="w-full h-[50px] flex flex-row rounded-t-2xl ">
+                <div className="w-full h-full  flex items-center justify-start">
+                  <p className="text-4xl  font-thin text-[#4c64cf]">
+                    Bid Application
+                  </p>
+                </div>
+                <div className="w-full h-full  flex items-center justify-end">
+                  <p className="text-2xl font-thin text-[#4c64cf]">
+                    <button onClick={() => setShowModal(false)}>
+                      <IoCloseOutline size={50} />
+                    </button>
+                  </p>
+                </div>
+              </div>
+              <div className="w-full h-[600px] flex flex-col ">
+                <div className="flex flex-col h-[150px] mt-4 items-start w-full ">
+                  <p className="text-2xl font-normal text-[#4c64cf]">
+                    Bid Notice Number:
+                  </p>
+                  <span className="w-full h-[40px] flex  px-2 mt-2 rounded bg-[#c7daff]">
+                    <p className="font-thin text-base py-[7px] text-[#4c64cf]">
+                      TESTBID001
+                    </p>
+                  </span>
+                </div>
+                <div className="flex flex-col h-[150px] mt-4 items-start w-full ">
+                  <p className="text-2xl font-normal text-[#4c64cf]">
+                    Application Name:
+                  </p>
+                  <span className="w-full h-[40px] flex  px-2 mt-2 rounded bg-[#c7daff]">
+                    <p className="font-thin text-base py-[7px] text-[#4c64cf]"></p>
+                  </span>
+                </div>
+                <div className="flex flex-col h-[150px] mt-4 items-start w-full ">
+                  <p className="text-2xl font-normal text-[#4c64cf]">
+                    Application Company Name:
+                  </p>
+                  <span className="w-full h-[40px] flex  px-2 mt-2 rounded bg-[#c7daff]">
+                    <p className="font-thin text-base py-[7px] text-[#4c64cf]"></p>
+                  </span>
+                </div>
+                <div className="flex flex-col h-[150px] mt-4 items-start w-full ">
+                  <p className="text-2xl font-normal text-[#4c64cf]">
+                    Tax Identification Number:
+                  </p>
+                  <span className="w-full h-[40px] flex  px-2 mt-2 rounded bg-[#c7daff]">
+                    <p className="font-thin text-base py-[7px] text-[#4c64cf]"></p>
+                  </span>
+                </div>
+                <div className="flex flex-col h-[150px] mt-4 items-start w-full ">
+                  <p className="text-2xl font-normal text-[#4c64cf]">
+                    Short Introduction:
+                  </p>
+                  <span className="w-full h-[150px] flex  px-2 mt-2 rounded bg-[#c7daff]">
+                    <p className="font-thin text-base py-[7px] text-[#4c64cf]"></p>
+                  </span>
+                </div>
+              </div>
+              <div className="w-full h-[100px] flex items-center justify-center gap-10">
+                <p className="text-2xl font-normal text-[#4c64cf]">
+                  Upload Bid Purchase Recipt:
+                </p>
+                <button className="w-[150px] h-[45px] flex items-center px-4 justify-center  rounded-md bg-[#4c64cf]">
+                  <p className="font-normal text-lg text-white text-center">
+                    Upload
+                  </p>
+                </button>
+              </div>
+              <div className="w-full h-[100px] flex items-center justify-center">
+                <button
+                  onClick={() => setShowModal2(!showModal2)}
+                  className="w-[250px] h-[60px] flex items-center  justify-center  rounded-full bg-[#4c64cf]"
+                >
+                  <p className="font-normal text-lg text-white text-center">
+                    Submit
+                  </p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {showModal2 && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-blue-300/30">
+          <div className="w-[450px] h-[135px] bg-white rounded-2xl">
+            <div className="w-full h-[50%] bg-white rounded-t-2xl flex items-center justify-center">
+              <p className="text-2xl font-normal text-[#4c64cf]">
+                Bid Submitted Successfully
+              </p>
+            </div>
+            <button
+              onClick={() => setShowModal2(false)}
+              className="w-full h-[50%] bg-[#4c64cf] rounded-b-2xl flex items-center justify-center"
+            >
+              <p className="text-2xl font-normal text-white text-[#4c64cf]">
+                OK
+              </p>
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default function BidPage() {
